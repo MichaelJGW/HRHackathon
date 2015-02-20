@@ -1,111 +1,76 @@
+// base.js
 
+var data = [
+  {Title:'Browser Vulnerability to Superfish: A Fact-Finding Trip to Best Buy (mozilla.org)', Upvotes: 207, Author: 'ndesaulniers', Time: 3, Comments: 57},
+  {Title:'Stripe: Bitcoin (stripe.com)', Upvotes: 662, Author: 'sunils34', Time: 10, Comments: 245},
+  {Title:'MacBook Pro Repair Extension Program for Video Issues (apple.com)', Upvotes: 10, Author: 'lstamour', Time: 13, Comments: 0},
+  {Title:'The Great SIM Heist: How Spies Stole the Keys to the Encryption Castle (firstlook.org)', Upvotes: 360, Author: 'frandroid', Time: 9, Comments: 104},
+  {Title:'Extracting the SuperFish certificate (erratasec.com)', Upvotes: 769, Author: 'robin_reala', Time: 14, Comments: 214},
+  {Title:'How to Grow a Forest Really Really Fast (medium.com)', Upvotes: 346, Author: 'rokhayakebe', Time: 13, Comments: 53},
+  {Title:'Dell XPS 13 Review (anandtech.com)', Upvotes: 185, Author: 'ismavis', Time: 14, Comments: 163},
+  {Title:'The Poor Man\'s Voxel Engine (et1337.com)', Upvotes: 211, Author: 'et1337', Time: 10, Comments: 39},
+  {Title:'Non-official MtGox investigation update and preliminary release (blog.wizsec.jp)', Upvotes: 69, Author: 'sdouglas', Time: 6, Comments: 14},
+  {Title:'Clef Offers Two-Factor Authentication Without All the Codes (techcrunch.com)', Upvotes: 15, Author: 'pixelcort', Time: 2, Comments: 4},
+  {Title:'CL21: An experimental project redesigning Common Lisp (cl21.org)', Upvotes: 118, Author: 'phabian', Time: 12, Comments: 48},
+  {Title:'EFF to Supreme Court: The Fourth Amendment Covers DNA Collection (eff.org)', Upvotes: 155, Author: 'DiabloD3', Time: 10, Comments: 59},
+  {Title:'Ask HN: How do your enterprise customers pay you?', Upvotes: 133, Author: 'zackliscio', Time: 10, Comments: 73},
+  {Title:'Bayes\' Theorem with Lego (countbayesie.com)', Upvotes: 57, Author: 'CountBayesie', Time: 9, Comments: 8},
+  {Title:'Postico – A modern PostgreSQL client for OS X (eggerapps.at)', Upvotes: 134, Author: 'tortilla', Time: 10, Comments: 43},
+  {Title:'Marilyn vos Savant and the Monty Hall Problem (priceonomics.com)', Upvotes: 54, Author: 'ryan_j_naughton', Time: 1, Comments: 55},
+  {Title:'Go-gl: Massive Overhaul (docs.google.com)', Upvotes: 30, Author: 'frisco', Time: 5, Comments: 4},
+  {Title:'Cloud-Based Bio Lab Transcriptic (YC W15) Lands $8.5M in Series A Funding (techcrunch.com)', Upvotes: 97, Author: 'jgrahamc', Time: 5, Comments: 31},
+  {Title:'Komodia SSL certificates are in many products (marcrogers.org)', Upvotes: 76, Author: 'bluesilver07', Time: 10, Comments: 12},
+  {Title:'Epic Games launches Unreal development grants (unrealengine.com)', Upvotes: 29, Author: 'nkurz', Time: 10, Comments: 7},
+  {Title:'A Weapon for Readers (2014) (nybooks.com)', Upvotes: 64, Author: 'rayiner', Time: 11, Comments: 25},
+  {Title:'Loci: A C++-like systems programming language (loci-lang.org)', Upvotes: 85, Author: 'skorecky', Time: 12, Comments: 20},
+  {Title:'Basic Personality Changes Linked to Unemployment (apa.org)', Upvotes: 56, Author: 'technologizer', Time: 14, Comments: 18},
+  {Title:'How Japan\'s Line app became a culture-changing, revenue-generating phenomenon (fastcompany.com)', Upvotes: 95, Author: 'chatman', Time: 12, Comments: 33},
+  {Title:'Major Changes from Solr 4 to Solr 5 (apache.org)', Upvotes: 570, Author: 'the_duck', Time: 17, Comments: 110},
+  {Title:'Oliver Sacks on learning he has terminal cancer (nytimes.com)', Upvotes: 52, Author: 'ldayley', Time: 11, Comments: 0},
+  {Title:'Using Google Cloud Platform for Security Scanning (googleonlinesecurity.blogspot.com)', Upvotes: 143, Author: 'lennartkoopmann', Time: 15, Comments: 62},
+  {Title:'Announcing Graylog v1.0 GA (graylog.org)', Upvotes: 148, Author: 'marknadal', Time: 8, Comments: 107}
+];
 
-var createArticle(){
+var createRow = function(post, i) {
+  var $row = $('<div/>');
+  var $toprow = $('<div/>');
 
-}
-var 
-var dataTemplate = {
-	title: "",
-	link: "",
-	points: "",
-	auther: "",
-	time: ""
-}
-var data = [];
-var parse = function (){
-	var rawDataProcessed = rawData.split("*");
-	for (var index = 0; index < rawDataProcessed.length; index++) {
-		var obj = {};
-		obj.title = rawDataProcessed[index].split();
-	};
-	textarea.value = "\n"; 
-}
-var rawData = "The Data Driven Life (2010) (nytimes.com)\n \
-1 point by sonabinu 0 minutes ago | discuss\
-*\
-Las Vegas 'Road Rage' Shooting Arrest: Family Knew Suspect (go.com)\n \
-1 point by Kevinlipta 0 minutes ago | discuss\
-*\
-Ask HN: Security camera system recommendations?\n \
-1 point by tdfx 1 minute ago | discuss\
-*\
-Charity: Water – Wanna Build Your Own Sensor? (charitywater.org)\n \
-1 point by novos 4 minutes ago | discuss\
-*\
-State Dept. has yet to clear its computer network of hackers (reuters.com)\n \
-1 point by chermanowicz 4 minutes ago | discuss\
-*\
-Go-gl: Massive Overhaul (docs.google.com)\n \
-1 point by slimsag 9 minutes ago | discuss\
-*\
-Strongest Natural Material Discovered in Snail Teeth (royalsocietypublishing.org)\n \
-1 point by pje 10 minutes ago | discuss\
-*\
-NSA and UK spies hacked world's largest SIM card manufacturer, report says (mashable.com)\n \
-1 point by hrasyid 12 minutes ago | discuss\
-*\
-Twitter bot tweets when someone on a campus edits another schools Wikipedia page (twitter.com)\n \
-1 point by w-ll 14 minutes ago | discuss\
-*\
-How Oregon's Second Largest City Vanished in a Day (smithsonianmag.com)\n \
-1 point by testrun 16 minutes ago | discuss\
-*\
-The Secrets Behind the Design of the Apple Watch (medium.com)\n \
-1 point by smartwatchr 25 minutes ago | discuss\
-*\
-How to Become Batman (npr.org)\n \
-1 point by juanplusjuan 34 minutes ago | discuss\
-*\
-Russian Researchers Uncover Sophisticated NSA Malware (mnch.tk)\n \
-2 points by cedwardsmedia 35 minutes ago | discuss\
-*\
-Barn converted into storytale wonderroom (dezeen.com)\n \
-1 point by gandy 36 minutes ago | discuss\
-*\
-Lenovo Laptops Shipping with Superfish (eff.org)\n \
-1 point by cedwardsmedia 36 minutes ago | discuss\
-*\
-NASA Systems Engineering Processes and Requirements [pdf] (spacegrant.org)\n \
-1 point by kylerpalmer 41 minutes ago | discuss\
-*\
-TURN Your BEAGLEBONEBLACK IN TO a 14-CHANNEL, 100MSPS LOGIC ANALYZER (hackaday.com)\n \
-1 point by 2510c39011c5 51 minutes ago | discuss\
-*\
-MT GOX trading bots manipulated the Bitcoin price (cryptocoinsnews.com)\n \
-1 point by giis 56 minutes ago | discuss\
-*\
-This Week in 'The NSA Knows Fucking Everything' (techdirt.com)\n \
-2 points by peter123 57 minutes ago | discuss\
-*\
-Man Ordered by Judge to Pay $30,000 in Support for Child That Isn’t His (reason.com)\n \
-3 points by jseliger 57 minutes ago | discuss\
-*\
-The Great Innovation Hoax in StartUp Land (medium.com)\n \
-1 point by hollaur 58 minutes ago | discuss\
-*\
-A ZDI analyst’s perspective on ZDI-15-030 (hp.com)\n \
-2 points by 2510c39011c5 1 hour ago | discuss\
-*\
-Does the Internet Make Us Stupid? Yes, but this may not be as bad as it sounds [pdf] (acm.org)\n \
-1 point by vferreira 1 hour ago | discuss\
-*\
-Which workstations should a startup buy?\n \
-2 points by mdonahoe 1 hour ago | 7 comments\
-*\
-3D printing a perfect replica of a sixth-century sword (cnet.com)\n \
-3 points by benbreen 1 hour ago | discuss\
-*\
-The Time Everyone “Corrected” the World’s Smartest Woman (priceonomics.com)\n \
-38 points by ryan_j_naughton 1 hour ago | 36 comments\
-*\
-This Snail’s Teeth Could Stop Bullets If They Weren’t So Small (vice.com)\n \
-2 points by DiabloD3 1 hour ago | discuss\
-*\
-Technology Isn't Magic–It's Haunted (vice.com)\n \
-1 point by DiabloD3 1 hour ago | discuss\
-*\
-When Disaster Strikes (signalvnoise.com)\n \
-2 points by wglb 1 hour ago | 1 comment\
-*\
-Spawning Windows Commands in Wasp Lisp and MOSREF (bluishcoder.co.nz)\n \
-2 points by wglb 1 hour ago | discuss";
+  var $num = $('<span/>', {
+    text: i + 1
+  }).appendTo($toprow);
+  var $up = $('<span/>', {
+    text: '/\\'
+  }).appendTo($toprow);
+  var $title = $('<a/>', {
+    text: post.Title
+  }).appendTo($toprow);
+
+  var $botrow = $('<div/>', {
+    text: post.title
+  });
+  var $points = $('<span/>', {
+    text:
+      post.Upvotes + ' points by ' +
+      post.Author + ' ' + post.Time +
+      ' hours ago | '
+  }).appendTo($botrow);
+  var $comments = $('<a/>', {
+    text: post.Comments + ' comments'
+  }).appendTo($botrow);
+
+  $toprow.appendTo($row);
+  $botrow.appendTo($row);
+
+  return $row;
+};
+
+var createRows = function(posts) {
+  posts.forEach(function(post, index) {
+    var row = createRow(post, index);
+    row.appendTo('body');
+  });
+};
+
+$(function() {
+  createRows(data);
+})

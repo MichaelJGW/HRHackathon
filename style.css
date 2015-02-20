@@ -1,0 +1,25 @@
+body {
+  font-family: Arial;
+
+}
+
+table {
+  border-collapse: collapse;
+}
+
+
+#main {
+  width: 85%;
+}
+
+
+#header {
+  background-color: #FF6600;
+}
+
+
+#content {
+  background-color: #f6f6ef;
+  margin: 0px;
+
+}

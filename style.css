@@ -55,18 +55,42 @@ a{
 
 #dataHolder{
 	min-height: 5em;
+	text-align: left;
+	font-size: 12px;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	color: #8C8282;
 }
+#dataHolder a{
+	color:#000;
+	font-size: 14px;
+}
+
+#dataHolder div span{
+	margin-left: 1em;
+	padding-left: 1em;
+}
+
+
+
+
+
+
+
 
 
 
 
 
 .footerColorBar{
+	float: none;
+	font-size: 12px;
 	background: #FF6600;
 	min-width: 100%;
 	min-height: 2px;
 }
 .footer{
+	color:black;
 	padding-top: 1em;
 	font-size: 14px;
 }

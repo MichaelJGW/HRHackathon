@@ -67,7 +67,7 @@ var createRow = function(post, i) {
 var createRows = function(posts) {
   posts.forEach(function(post, index) {
     var row = createRow(post, index);
-    row.appendTo('body');
+    row.appendTo('#dataHolder');
   });
 };
 

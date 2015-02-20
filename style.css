@@ -1,6 +1,5 @@
 body {
-  font-family: Arial;
-
+  font-family:  Verdana, Geneva, sans-serif;
 }
 
 table {
@@ -8,8 +7,10 @@ table {
 }
 
 
-#main {
+.container {
   width: 85%;
+  background: #F6F6EF;
+  min-height: 100%;
 }
 
 
@@ -22,4 +23,58 @@ table {
   background-color: #f6f6ef;
   margin: 0px;
 
+}
+
+.header{
+	font-size: 10pt;
+	color: #000;
+	text-decoration: none;
+	width: 100%;
+	background: #FF6600;
+	float: left;
+	padding-top: 0.2em;
+	padding-bottom: 0.2em;
+}
+.header .title{
+	font-weight: bold;
+}
+.header span{
+	float: left;
+	padding-left: 0.5em;
+}.header a{
+	float: left;
+	padding-left: 0.5em;
+}
+.header .login{
+	float: right;
+}
+a{
+	color:#000;
+	text-decoration: none;
+}
+
+#dataHolder{
+	min-height: 5em;
+}
+
+
+
+
+
+.footerColorBar{
+	background: #FF6600;
+	min-width: 100%;
+	min-height: 2px;
+}
+.footer{
+	padding-top: 1em;
+	font-size: 14px;
+}
+.footer a{
+	font-size: 10px;
+	padding-left: 0.5em;
+}
+.footer span{
+	font-size: 10px;
+	padding-left: 0.5em;
 }

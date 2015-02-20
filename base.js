@@ -42,17 +42,19 @@ var createRow = function(post, i) {
     text: '/\\'
   }).appendTo($toprow);
   var $title = $('<a/>', {
-    text: post.Title
+    text: post.Title,
+    href: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
   }).appendTo($toprow);
 
   var $botrow = $('<div/>', {
     text: post.title
   });
-  var $points = $('<span/>', {
+  var $points = $('<a/>', {
     text:
       post.Upvotes + ' points by ' +
       post.Author + ' ' + post.Time +
-      ' hours ago | '
+      ' hours ago | ',
+    href: 'https://news.ycombinator.com/user?id=' + post.Author
   }).appendTo($botrow);
   var $comments = $('<a/>', {
     text: post.Comments + ' comments'
@@ -73,4 +75,9 @@ var createRows = function(posts) {
 
 $(function() {
   createRows(data);
-})
+
+  $('#search').submit(function(e) {
+    e.preventDefault();
+    location.href = "https://hn.algolia.com/?query=" + $('#search-text').val();
+  });
+});

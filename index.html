@@ -2,9 +2,65 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 	<script src="base.js"></script>
 </head>
 <body>
+<center>
+	<table id="main">
+		<tbody id="body">
+		</tbody>
+	</table>
+</center>
+<script>
+	var createHead = function(arr, id) {
+		var $tr = $('<tr/>');
+		var $td = $('<td/>', {
+			id: 'header'
+		});
+		var $table = $('<table/>');
+		var $tbody = $('<tbody/>');
 
+		for (var i = 0; i < arr.length; i++) {
+			$('<td/>', {
+				text: arr[i]
+			}).appendTo($tbody)
+
+			$tbody.appendTo($table)
+			$table.appendTo($td)
+			$td.appendTo($tr);
+		}
+
+		$tr.appendTo('#body');
+	};
+
+	var createRow = function(arr, id) {
+		var $tr = $('<tr/>', {
+			id: 'content'
+		});
+		var $td = $('<td/>', {
+			// id: 'content'
+		});
+		var $table = $('<table/>');
+		var $tbody = $('<tbody/>');
+
+		for (var i = 0; i < arr.length; i++) {
+			$('<td/>', {
+				text: arr[i]
+			}).appendTo($tbody)
+
+			$tbody.appendTo($table)
+			$table.appendTo($td)
+			$td.appendTo($tr);
+		}
+
+		$tr.appendTo('#body');
+	};
+
+	createHead(['HN', 'Hacker News', 'Login']);
+	createRow(['1.', '/\\', 'Placeholder Title']);
+	createRow(['2. ', '/\\', 'Placeholder Title']);
+
+</script>
 </body>
 </html>
